@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WebGPU Demo</title>
+  <title>WebGPU Mouse Demo</title>
   <style>
     html,
     body {
@@ -15,6 +15,18 @@
     body {
       padding: 16px;
       box-sizing: border-box;
+      position: relative;
+      background: #000;
+    }
+
+    #info {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      color: #fff;
+      font-family: monospace;
+      pointer-events: none;
+      z-index: 1;
     }
 
     canvas {
@@ -26,6 +38,7 @@
 </head>
 
 <body>
+  <div id="info">x=0.00, y=0.00</div>
   <canvas id="gpu-canvas"></canvas>
   <script type="module" src="/src/main.ts"></script>
 </body>
